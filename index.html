@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+      <meta charset="utf-8">
+      <title>CurrencyConverter</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="css/general.css" rel="stylesheet">
+      <link href="css/normalize.css" rel="stylesheet">
+      <link href="css/main.css" rel="stylesheet">
+      <script defer src="js/script.js"></script>
+</head>
+
+<body class="body">
+      <main class="main">
+            <form class=" form js-form">
+                  <fieldset class="form__fieldset">
+                        <legend class="form__legend">Kalkulator walut</legend>
+                        <p>
+                              <span class="form__span">Podaj kwotę w PLN:</span>
+                              <label>
+                                    <input class="form__input js-amount">
+                              </label>
+                        </p>
+                        <p>
+                              <span class="form__span">Wybierz walutę:</span>
+                              <label>
+                                    <select class="form__input js-currency">
+                                          <option value="EUR">
+                                                EUR - EUGiW
+                                          </option>
+                                          <option value="USD">
+                                                USD - USA
+                                          </option>
+                                          <option value="CHF">
+                                                CHF - Szwajcaria
+                                          </option>
+                                          <option value="GBP">
+                                                GBP - W.Brytania
+                                          </option>
+                                          <option value="JPY">
+                                                JPY - Japonia
+                                          </option>
+                                    </select>
+
+                              </label>
+                        </p>
+                        <button class="form__button">Przelicz</button>
+                  </fieldset>
+
+                  <fieldset class="form__fieldset form__fieldset--second">
+                        <legend class="form__legend">Wynik</legend>
+                        <p class="form__paragraph js-sum"></p>
+                  </fieldset>
+            </form>
+      </main>
+      <footer class="footer">
+            &copy; JakubG
+      </footer>
+</body>
+
+</html>
