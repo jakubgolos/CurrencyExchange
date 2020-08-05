@@ -1,43 +1,51 @@
-console.log("Hejka")
+{
+      const calculateResult = (amount, currency) => {
+            const rateEUR = 4.4660;
+            const rateGBP = 4.8851;
+            const rateUSD = 3.9806;
+            const rateCHF = 4.1818;
 
-let formElement = document.querySelector(".js-form")
-let amountElement = document.querySelector(".js-amount");
-let currencyElement = document.querySelector(".js-currency");
-let sumElement = document.querySelector(".js-sum");
+            switch (currency) {
+                  case "EUR":
+                        return amount / rateEUR;
 
-let EUR = 4.4738;
-let USD = 3.9117;
-let GBP = 4.9309;
-let CHF = 4.1677;
-let JPY = 3.6590;
+                  case "GBP":
+                        return amount / rateGBP;
 
-formElement.addEventListener("submit", (event) => {
-      event.preventDefault();
+                  case "USD":
+                        return amount / rateUSD;
 
-      let amount = amountElement.value;
-      let currency = currencyElement.value;
-      let _sum;
+                  case "CHF":
+                        return amount / rateCHF;
+            }
+      };
 
-      switch (currency) {
+      const updateResultText = (amount, result, currency) => {
+            const resultElement = document.querySelector(".js-result");
+            resultElement.innerHTML = `${amount.toFixed(2)} PLN =  ${result.toFixed(2)} ${currency}`;
+      };
 
-            case "EUR":
-                  _sum = +amount / EUR;
-                  break;
+      const onFormSubmit = (event) => {
+            event.preventDefault();
 
-            case "USD":
-                  _sum = +amount / USD;
-                  break;
+            const amountElement = document.querySelector(".js-amount");
+            const currencyElement = document.querySelector(".js-currency");
 
-            case "GBP":
-                  _sum = +amount / GBP;
+            const amount = +amountElement.value;
+            const currency = currencyElement.value;
 
-            case "CHF":
-                  _sum = +amount / CHF;
+            const result = calculateResult(amount, currency);
 
-            case "JPY":
-                  _sum = +amount / JPY;
+            updateResultText(amount, result, currency);
+      };
 
-      }
+      const init = () => {
+            const formElement = document.querySelector(".js-form");
 
-      sumElement.innerText = `Cebulion w obcej walucie wynosi: ${_sum.toFixed(2)} ${currency}`;
-});
+            formElement.addEventListener("submit", onFormSubmit);
+      };
+
+      init();
+}
+
+
