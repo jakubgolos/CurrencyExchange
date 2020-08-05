@@ -8,6 +8,8 @@ html {
 
 .body {
       background-image: url(../images/backgroundImage.jpg);
-      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 }
-

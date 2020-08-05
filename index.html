@@ -18,12 +18,15 @@
                         <legend class="form__legend">Kalkulator walut</legend>
                         <p>
                               <span class="form__span">Podaj kwotę w PLN:</span>
+                              <br>
                               <label>
-                                    <input class="form__input js-amount">
+                                    <input required number class="form__input js-amount">
                               </label>
+
                         </p>
                         <p>
                               <span class="form__span">Wybierz walutę:</span>
+                              <br>
                               <label>
                                     <select class="form__input js-currency">
                                           <option value="EUR">
@@ -48,15 +51,15 @@
                         <button class="form__button">Przelicz</button>
                   </fieldset>
 
-                  <fieldset class="form__fieldset form__fieldset--second">
+                  <fieldset class="form__fieldset">
                         <legend class="form__legend">Wynik</legend>
-                        <p class="form__paragraph js-sum"></p>
+                        <p class="form__paragraph js-result"></p>
                   </fieldset>
             </form>
-      </main>
-      <footer class="footer">
-            &copy; JakubG
-      </footer>
+
+            <footer class="footer">
+                  <p class="footer__paragraph">&copy; JakubG</p>
+            </footer>
 </body>
 
 </html>
